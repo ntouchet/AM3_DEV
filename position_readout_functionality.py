@@ -54,30 +54,31 @@ class functional_app(Ui_MainWindow):
     def setup_set_zero_popup(self):
         self.zero_popup_box = QtWidgets.QMessageBox()
         self.zero_popup_box.setText("Would you like to set the current encoder position as Zero?")
-        self.zero_popup_box.setIcon(QtWidgets.QMessageBox.Question)
-        self.zero_popup_box.setStandardButtons(QtWidgets.QMessageBox.Yes | QtWidgets.QMessageBox.No)
+        yes_button = self.zero_popup_box.addButton("Yes", QtWidgets.QMessageBox.AcceptRole)
+        no_button = self.zero_popup_box.addButton("No", QtWidgets.QMessageBox.RejectRole)
         self.zero_popup_box.setDefaultButton(QtWidgets.QMessageBox.No)
-        self.zero_popup_box.buttonClicked.connect(self.set_zero_popup_button_handler)
+        self.zero_popup_box.buttonClicked.connect(lambda button: self.set_zero_popup_button_handler(button.text()))
     
     def setup_set_direction_popup(self):
         self.direction_popup_box = QtWidgets.QMessageBox()
         self.direction_popup_box.setText("What Direction is the motor rotating in?")
         clockwise_button = self.direction_popup_box.addButton("Clockwise", QtWidgets.QMessageBox.AcceptRole)
         counterclockwise_button = self.direction_popup_box.addButton("Counter Clockwise", QtWidgets.QMessageBox.RejectRole)
-        self.direction_popup_box.buttonClicked.connect(self.set_direction_popup_button_handler)
+        self.direction_popup_box.buttonClicked.connect(lambda button: self.set_direction_popup_button_handler(button.text()))
 
     def set_direction_popup_button_handler(self,button_pressed):
         self.old_direction = self.direction
         if button_pressed == "Clockwise":
             self.direction = "Clockwise"
-            print("lol")
+            
         elif button_pressed == "Counter Clockwise":
             self.direction = "CounterClockwise"
 
     def set_zero_popup_button_handler(self, button_pressed):
+        
         if button_pressed == "Yes":
             self.set_zero_bit = 1
-            print("lol")
+            
         elif button_pressed == "No":
             self.zero_popup_box.close()
 

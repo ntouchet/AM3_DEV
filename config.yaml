@@ -1,5 +1,5 @@
 arduino:
-  serial_port: "/dev/cu.usbmodem141301"
+  serial_port: "/dev/tty.usbmodem141301"
   period_between_samples_mili_seconds: 1000
 encoder:
   pulses_per_revolution: 262144

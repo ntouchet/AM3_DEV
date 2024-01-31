@@ -22,13 +22,13 @@
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <item row="0" column="0" colspan="2">
-        <widget class="QGroupBox" name="groupBox_2">
+        <widget class="QGroupBox" name="position_group">
          <property name="title">
           <string>Position Readout in m</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_4">
           <item row="0" column="0">
-           <widget class="QLCDNumber" name="readout_display"/>
+           <widget class="QLCDNumber" name="position_display"/>
           </item>
          </layout>
         </widget>
@@ -48,13 +48,13 @@
         </widget>
        </item>
        <item row="1" column="0" colspan="2">
-        <widget class="QGroupBox" name="groupBox_3">
+        <widget class="QGroupBox" name="speed_group">
          <property name="title">
           <string>Current Tape Speed in meters/minute</string>
          </property>
          <layout class="QGridLayout" name="gridLayout_5">
           <item row="0" column="0">
-           <widget class="QLCDNumber" name="lcdNumber"/>
+           <widget class="QLCDNumber" name="speed_display"/>
           </item>
          </layout>
         </widget>
@@ -63,7 +63,7 @@
      </widget>
     </item>
     <item row="0" column="1">
-     <widget class="QGroupBox" name="groupBox">
+     <widget class="QGroupBox" name="motion_group">
       <property name="title">
        <string>Motion Controll</string>
       </property>
@@ -83,14 +83,14 @@
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QPushButton" name="pushButton_2">
+        <widget class="QPushButton" name="stop_motion_button">
          <property name="text">
           <string>Stop Motion</string>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="start_motion_button">
          <property name="text">
           <string>Start Motion</string>
          </property>
@@ -104,7 +104,7 @@
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLineEdit" name="lineEdit"/>
+        <widget class="QLineEdit" name="desired_speed_line"/>
        </item>
        <item row="1" column="0">
         <widget class="QLabel" name="direction_label">

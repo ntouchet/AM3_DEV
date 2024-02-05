@@ -20,7 +20,7 @@ class functional_app(Ui_MainWindow):
         self.begin_button.clicked.connect(self.toggle_position_reporting)
         self.zero_button.clicked.connect(self.set_zero)
         self.direction_button.clicked.connect(self.set_direction)
-        self.readout_display.display(0.0)
+        self.position_display.display(0.0)
         self.setup_set_zero_popup()
         self.setup_set_direction_popup()
 
@@ -32,7 +32,7 @@ class functional_app(Ui_MainWindow):
             
             self.set_zero_bit = 0
         encoder_position = self.arduino.request_encoder_position()
-        self.readout_display.display(encoder_position)
+        self.position_display.display(encoder_position)
 
     def toggle_position_reporting(self):
         self.position_reporting_status=self.position_reporting_status^1
